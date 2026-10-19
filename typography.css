@@ -1,0 +1,61 @@
+body {
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+blockquote {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+p {
+  line-height: 1.65;
+}
+
+.hero h1,
+.pricing-hero h1 {
+  line-height: 1.04;
+}
+
+.intro h2,
+.process h2 {
+  line-height: 1.08;
+}
+
+.service h3,
+.step h3,
+.project-foot h3 {
+  line-height: 1.14;
+}
+
+.price-card h2,
+.care-grid h2,
+.price-list h2 {
+  line-height: 1.2;
+}
+
+.window-body strong,
+.paper strong {
+  line-height: 1.08;
+}
+
+.contact h2,
+.pricing-contact h2 {
+  line-height: 1.04;
+}
+
+blockquote {
+  line-height: 1.14;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: clamp(46px, 14vw, 88px);
+  }
+
+  .pricing-hero h1 {
+    font-size: clamp(52px, 15vw, 72px);
+  }
+}

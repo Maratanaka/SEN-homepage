@@ -1,0 +1,47 @@
+.project {
+  min-height: 0;
+  transform: none;
+  transition: none;
+}
+
+.projects {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project .visual {
+  display: block;
+  flex: 0 0 auto;
+  aspect-ratio: 2 / 1;
+  margin: 18px 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--paper);
+}
+
+.project-preview {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: none;
+}
+
+.project:hover,
+.project:focus-visible,
+.project:hover .project-preview,
+.project:focus-visible .project-preview {
+  transform: none;
+}
+
+@media (max-width: 800px) {
+  .project .visual {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

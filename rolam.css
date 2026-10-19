@@ -1,0 +1,604 @@
+.about-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 145px max(40px, calc((100vw - var(--max)) / 2 + 40px)) 78px;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.about-hero .eyebrow {
+  margin: 0 0 30px;
+}
+
+.about-hero h1 {
+  position: relative;
+  z-index: 1;
+  max-width: 1050px;
+  margin: 0;
+  font: 500 clamp(72px, 10vw, 142px) / 1.02 "Manrope", sans-serif;
+  letter-spacing: -0.075em;
+}
+
+.about-hero h1 span {
+  color: var(--sage);
+  font-style: italic;
+}
+
+.about-hero-bottom {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  max-width: 720px;
+  margin-top: 38px;
+}
+
+.about-hero-bottom p {
+  max-width: 570px;
+  margin: 0;
+  color: #5f5c55;
+  font-size: 18px;
+}
+
+.about-down {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 20px;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.about-down:hover {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.about-orbit {
+  position: absolute;
+  top: 8%;
+  right: -20px;
+  width: clamp(100px, 15vw, 200px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(111, 117, 96, 0.19);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.about-orbit::before,
+.about-orbit::after {
+  position: absolute;
+  content: "";
+  border: 1px solid rgba(168, 143, 120, 0.22);
+  border-radius: 50%;
+}
+
+.about-orbit::before {
+  inset: 15%;
+}
+
+.about-orbit::after {
+  inset: 32%;
+}
+
+.about-orbit span,
+.about-orbit i {
+  position: absolute;
+  width: 11px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+.about-orbit span {
+  top: 17%;
+  right: 22%;
+}
+
+.about-orbit i {
+  bottom: 17%;
+  left: 23%;
+  width: 7px;
+  background: var(--clay);
+}
+
+.about-manifesto {
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  gap: 45px;
+  padding-top: 150px;
+  padding-bottom: 160px;
+}
+
+.about-career {
+  padding-top: 90px;
+  padding-bottom: 110px;
+  border-top: 1px solid var(--line);
+  background: rgba(236, 233, 225, 0.45);
+}
+
+.about-career-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.about-career-heading p {
+  max-width: 380px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.about-career-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.about-career-card {
+  min-height: 340px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.34);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-career-card.career-featured {
+  border-color: var(--sage);
+  background: var(--sage);
+  color: var(--white);
+}
+
+.career-index {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.career-featured .career-index {
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.about-career-card h2 {
+  margin: 44px 0 8px;
+  font: 500 clamp(28px, 3.6vw, 46px) / 1.12 "Manrope", sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.career-place {
+  margin: 0 0 16px;
+  color: var(--clay);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.about-career-card > p:not(.career-place) {
+  max-width: 570px;
+  margin: 0 0 28px;
+  color: #68665f;
+  font-size: 14px;
+}
+
+.career-featured .career-place,
+.career-featured > p:not(.career-place) {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.about-career-card > strong {
+  margin-top: auto;
+  color: var(--sage);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.career-featured > strong {
+  color: #e4d8c7;
+}
+
+.about-skills {
+  padding-top: 100px;
+  padding-bottom: 135px;
+  border-top: 1px solid var(--line);
+}
+
+.about-skills-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(50px, 9vw, 130px);
+  margin-top: 48px;
+}
+
+.about-skill-list > h2,
+.about-profile-links > h2 {
+  margin: 0 0 30px;
+  font: 500 clamp(30px, 4vw, 46px) / 1.15 "Manrope", sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.skill-item h3 {
+  margin: 0 0 7px;
+  font: 600 16px / 1.35 "Manrope", sans-serif;
+}
+
+.skill-item p {
+  margin: 0;
+  color: #74716a;
+  font-size: 14px;
+}
+
+.about-profile-link {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.about-profile-link span {
+  color: var(--sage);
+}
+
+.skill-item {
+  display: grid;
+  grid-template-columns: minmax(145px, 0.65fr) minmax(0, 1fr);
+  gap: 20px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+.skill-item h3 {
+  margin: 0;
+}
+
+.about-principles {
+  border-top: 1px solid var(--line);
+}
+
+.about-manifesto-copy h2 {
+  max-width: 980px;
+  margin: 0;
+  font: 500 clamp(42px, 6.1vw, 82px) / 1.1 "Manrope", sans-serif;
+  letter-spacing: -0.065em;
+}
+
+.about-manifesto-copy h2 span {
+  color: #89877f;
+}
+
+.about-manifesto-foot {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 36px;
+  margin-top: 42px;
+}
+
+.about-manifesto-foot p {
+  max-width: 640px;
+  margin: 0;
+  color: #68665f;
+  font-size: 17px;
+}
+
+.about-manifesto-foot a {
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.about-manifesto-foot a span {
+  margin-left: 8px;
+}
+
+.about-principles {
+  padding-top: 100px;
+  padding-bottom: 150px;
+  border-top: 1px solid var(--line);
+}
+
+.about-principles-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 54px;
+}
+
+.about-principles-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.about-principles-heading strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.about-principle {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) 60px;
+  align-items: center;
+  gap: 22px;
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+}
+
+.about-principle:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.about-principle > span:first-child {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+.about-principle h2 {
+  margin: 0 0 8px;
+  font: 500 clamp(23px, 3vw, 34px) / 1.2 "Manrope", sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.about-principle p {
+  max-width: 620px;
+  margin: 0;
+  color: #74716a;
+  font-size: 15px;
+}
+
+.principle-mark {
+  justify-self: end;
+  color: var(--sage);
+  font-size: 30px;
+}
+
+.about-cta {
+  padding: 100px 0 25px;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.about-cta .tag {
+  color: #98a180;
+}
+
+.about-cta-content {
+  display: grid;
+  grid-template-columns: 1fr 0.72fr;
+  align-items: end;
+  gap: 60px;
+  margin: 75px 0 95px;
+}
+
+.about-cta h2 {
+  margin: 0;
+  font: 500 clamp(54px, 8vw, 110px) / 1.04 "Manrope", sans-serif;
+  letter-spacing: -0.07em;
+}
+
+.about-cta h2 span {
+  color: #a9b290;
+  font-style: italic;
+}
+
+.about-cta-side {
+  max-width: 390px;
+  justify-self: end;
+}
+
+.about-cta-side p {
+  margin: 0 0 30px;
+  color: #aaa9a2;
+  font-size: 17px;
+}
+
+.about-cta-side a {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #55534f;
+  font: 500 23px "Manrope", sans-serif;
+}
+
+@media (max-width: 800px) {
+  .header .menu {
+    display: block;
+    color: var(--ink);
+  }
+
+  .about-hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 125px 20px 70px;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(60px, 12vw, 94px);
+  }
+
+  .about-orbit {
+    top: 0;
+    right: 0;
+    opacity: 0.6;
+  }
+
+  .about-manifesto {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding-top: 100px;
+    padding-bottom: 105px;
+  }
+
+  .about-manifesto-foot {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-manifesto-foot a {
+    justify-self: start;
+  }
+
+  .about-career {
+    padding-top: 75px;
+    padding-bottom: 85px;
+  }
+
+  .about-career-grid,
+  .about-skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-career-card {
+    min-height: 300px;
+  }
+
+  .about-skills {
+    padding-top: 75px;
+    padding-bottom: 95px;
+  }
+
+  .about-skills-grid {
+    gap: 55px;
+  }
+
+  .about-principles {
+    padding-top: 75px;
+    padding-bottom: 95px;
+  }
+
+  .about-cta-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin: 55px 0 70px;
+  }
+
+  .about-cta-side {
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 115px 20px 55px;
+  }
+
+  .about-hero-inner {
+    width: calc(100vw - 40px);
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .about-hero .eyebrow {
+    margin-bottom: 25px;
+  }
+
+  .about-hero h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(38px, 10vw, 56px);
+    overflow-wrap: anywhere;
+  }
+
+  .about-hero-bottom {
+    flex-direction: column;
+    align-items: start;
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .about-hero-bottom p {
+    width: min(100%, 320px);
+    max-width: calc(100vw - 40px);
+    font-size: 16px;
+  }
+
+  .about-down {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .about-orbit {
+    top: -40px;
+    right: -8px;
+    width: 110px;
+    opacity: 0.45;
+  }
+
+  .about-principles-heading {
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 35px;
+  }
+
+  .about-career-heading {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about-career-card {
+    min-height: 0;
+    padding: 23px;
+  }
+
+  .about-career-card h2 {
+    margin-top: 34px;
+  }
+
+  .skill-item {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .about-principle {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 12px;
+    padding: 23px 0;
+  }
+
+  .principle-mark {
+    display: none;
+  }
+
+  .about-cta {
+    padding-top: 75px;
+  }
+
+  .about-cta h2 {
+    font-size: clamp(48px, 13vw, 72px);
+  }
+
+  .about-cta-side a {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-down {
+    transition: none;
+  }
+}

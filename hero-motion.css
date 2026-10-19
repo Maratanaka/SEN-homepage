@@ -1,0 +1,321 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: 116px;
+  padding-bottom: 26px;
+  justify-content: center;
+  gap: 52px;
+}
+
+.hero::before,
+.hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+}
+
+.hero::before {
+  background:
+    radial-gradient(ellipse at 18% 34%, rgba(111, 117, 96, 0.11), transparent 24%),
+    radial-gradient(ellipse at 82% 68%, rgba(168, 143, 120, 0.09), transparent 23%),
+    radial-gradient(ellipse at 72% 18%, rgba(111, 117, 96, 0.07), transparent 16%);
+  filter: blur(22px);
+  animation: hero-glow-drift 24s ease-in-out infinite alternate;
+}
+
+.hero::after {
+  background:
+    radial-gradient(circle at 15% 68%, transparent 0 39px, rgba(168, 143, 120, 0.13) 40px 41px, transparent 42px),
+    radial-gradient(circle at 82% 25%, transparent 0 25px, rgba(111, 117, 96, 0.13) 26px 27px, transparent 28px),
+    radial-gradient(circle at 77% 78%, rgba(111, 117, 96, 0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 24% 24%, rgba(168, 143, 120, 0.16) 0 2px, transparent 3px);
+  animation: hero-shapes-drift 30s ease-in-out infinite alternate;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+}
+
+@keyframes hero-glow-drift {
+  from {
+    transform: translate3d(-8px, -6px, 0) scale(0.98);
+  }
+  to {
+    transform: translate3d(10px, 8px, 0) scale(1.03);
+  }
+}
+
+@keyframes hero-shapes-drift {
+  from {
+    transform: translate3d(-5px, 5px, 0);
+  }
+  to {
+    transform: translate3d(7px, -7px, 0);
+  }
+}
+
+.hero-copy {
+  width: 100%;
+  text-align: center;
+}
+
+.hero h1 {
+  position: relative;
+  overflow: visible;
+  max-width: none;
+  font-size: clamp(88px, 12vw, 180px);
+  line-height: 0.87;
+  letter-spacing: -0.075em;
+  perspective: 900px;
+}
+
+.hero .eyebrow {
+  text-align: center;
+}
+
+.hero h1 {
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
+.hero .lead {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 520px;
+}
+
+.hero .actions {
+  justify-content: center;
+  margin-top: 28px;
+  gap: 12px;
+}
+
+.hero .actions .btn,
+.hero .actions .link {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 0;
+  padding: 0 23px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  transition:
+    color 220ms ease,
+    background 220ms ease,
+    border-color 220ms ease,
+    transform 220ms ease;
+}
+
+.hero .actions .btn {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.hero .actions .btn span,
+.hero .actions .link span {
+  font-size: 16px;
+  transition: transform 220ms ease;
+}
+
+.hero .actions .link {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.hero .actions .btn:hover {
+  transform: translateY(-2px);
+  background: var(--sage);
+}
+
+.hero .actions .link:hover {
+  transform: translateY(-2px);
+  border-color: var(--sage);
+  background: rgba(111, 117, 96, 0.07);
+}
+
+.hero .actions .btn:hover span,
+.hero .actions .link:hover span {
+  transform: translate(2px, -2px);
+}
+
+.hero .actions .btn:focus-visible,
+.hero .actions .link:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 4px;
+}
+
+.hero h1 .hero-title-line {
+  display: block;
+}
+
+.hero h1 .hero-title-line--first {
+  color: var(--ink);
+}
+
+.hero h1 .hero-title-line--first .hero-letter {
+  color: var(--ink);
+}
+
+.hero h1 .hero-title-line--accent {
+  color: var(--sage);
+}
+
+.hero h1 .hero-title-line--accent .hero-letter {
+  color: var(--sage);
+}
+
+.hero h1 .hero-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translate3d(0, 0.6em, 0) rotateX(-65deg);
+  transform-origin: 50% 100%;
+  transition:
+    opacity 420ms ease,
+    transform 720ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--letter-delay, 0ms);
+}
+
+.hero h1.in .hero-letter {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) rotateX(0);
+}
+
+.hero h1::before,
+.hero h1::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.hero h1::before {
+  top: -0.08em;
+  right: 12%;
+  width: 0.2em;
+  aspect-ratio: 1;
+  border: 1px solid var(--clay);
+  border-radius: 50%;
+  box-shadow: 0.13em 0.12em 0 -0.045em var(--sage);
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity 500ms ease 500ms,
+    transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 500ms;
+}
+
+.hero h1::after {
+  top: -0.2em;
+  right: 5%;
+  width: 0.16em;
+  aspect-ratio: 1;
+  background: var(--sage);
+  clip-path: polygon(50% 0, 61% 38%, 100% 50%, 61% 62%, 50% 100%, 39% 62%, 0 50%, 39% 38%);
+  opacity: 0;
+  transform: rotate(-25deg) scale(0.5);
+  transition:
+    opacity 500ms ease 650ms,
+    transform 800ms cubic-bezier(0.2, 0.8, 0.2, 1) 650ms;
+}
+
+.hero h1.in::before {
+  opacity: 0.8;
+  transform: scale(1);
+}
+
+.hero h1.in::after {
+  opacity: 0.9;
+  transform: rotate(35deg) scale(1);
+  animation: hero-sparkle 8s ease-in-out 1.4s infinite;
+}
+
+@keyframes hero-sparkle {
+  0%,
+  100% {
+    transform: rotate(35deg) scale(1);
+  }
+  50% {
+    transform: rotate(125deg) scale(0.8);
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    gap: 38px;
+  }
+
+  .hero h1 {
+    font-size: clamp(78px, 12vw, 128px);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 102px;
+    padding-bottom: 22px;
+    gap: 32px;
+  }
+
+  .hero h1 {
+    font-size: clamp(64px, 16vw, 100px);
+  }
+
+  .hero .lead {
+    max-width: 420px;
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .hero::after {
+    animation: none;
+  }
+
+  .hero .actions .btn,
+  .hero .actions .link,
+  .hero .actions .btn span,
+  .hero .actions .link span {
+    transition: none;
+  }
+
+  .hero .actions .btn:hover,
+  .hero .actions .link:hover,
+  .hero .actions .btn:hover span,
+  .hero .actions .link:hover span {
+    transform: none;
+  }
+
+  .hero h1.reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero h1 .hero-letter {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero h1::before,
+  .hero h1::after {
+    opacity: 0.8;
+    transform: none;
+    transition: none;
+  }
+
+  .hero h1.in::after {
+    animation: none;
+  }
+}
